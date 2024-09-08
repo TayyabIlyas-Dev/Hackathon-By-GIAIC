@@ -1,12 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import { TbHome } from "react-icons/tb";
-import { RiContactsLine } from "react-icons/ri";
-import { TiBookmark } from "react-icons/ti";
-import { TbMoodSearch } from "react-icons/tb";
-import { FaSearch } from "react-icons/fa";
-import { AiOutlineSearch } from 'react-icons/ai';
-import { LuRectangleHorizontal } from "react-icons/lu";
 import Buttons from './Buttons';
 const Navbar = () => {
   return (

@@ -1,8 +1,3 @@
-
-
-
-
-
 'use client';
 import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
@@ -120,134 +115,120 @@ const ResumeForm: React.FC = () => {
 
   return (
     <div className="resume-form-container">
-     <div className=' border-solid border-2 m-4 p-3'>
-   
-        <div>
+      <div className='border-solid border-2 m-4 p-3'>
         <h1 className='font-bold text-3xl text-center m-6'>Create Your Resume</h1>
-  
 
-  <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
-    <label>Name:</label>
-    <input type="text" name="name" placeholder='Your Name' value={formData.name} onChange={handleInputChange} />
-  </div>
-
-  <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
-    <label>Profession:</label>
-    <input type="text" name="profession" value={formData.profession} onChange={handleInputChange} />
-  </div>
-
-{/* Persnal info here  */}
-
-  <div className='border-solid border-2 w-72 flex justify-center m-3 p-1 rounded-md'>
-    <label>Father's Name:</label>
-    <input type="text" name="fatherName" value={formData.fatherName} onChange={handleInputChange} />
-  </div>
-
-  <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
-    <label>Age:</label>
-    <input type="number" name="age" value={formData.age} onChange={handleInputChange} />
-  </div>
-
-  <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
-    <label>Religion:</label>
-    <input type="text" name="religion" value={formData.religion} onChange={handleInputChange} />
-  </div>
-
-  <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
-    <label>Marital Status:</label>
-    <input type="text" name="maritalStatus" value={formData.maritalStatus} onChange={handleInputChange} />
-  </div>
-
-  {/* Skills Section */}
-  
-  {formData.skills.map((skill, index) => (
-    <div key={index} className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
-        <label>Skills:</label>
-      <input type="text" value={skill} onChange={(e) => handleSkillsChange(e, index)} />
-      <button onClick={() => removeSkill(index)} className='text-black'><MdDelete /></button>
-    </div>
-  ))}
-  <button onClick={addSkill} className='border-solid border-2  hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3  mx-3 rounded-md'>Add Skill</button> 
-
-  {/* Experience Section */}
-  
-  {formData.experiences.map((experience, index) => (
-    <div key={index} className='border-solid border-2 rounded-md p-1   m-3'>
-        <label>Experience:</label>
-      <input
-        type="text"
-        name="years"
-        value={experience.years}
-        placeholder="Years"
-        onChange={(e) => handleExperienceChange(e, index, 'years')}
-      />
-      <input
-        type="text"
-        name="role"
-        value={experience.role}
-        placeholder="Role"
-        onChange={(e) => handleExperienceChange(e, index, 'role')}
-      />
-      <input
-        type="text"
-        name="company"
-        value={experience.company}
-        placeholder="Company"
-        onChange={(e) => handleExperienceChange(e, index, 'company')}
-      />
-      <button onClick={() => removeExperience(index)}><MdDelete /></button>
-    </div>
-  ))}
-  <button onClick={addExperience} className='border-solid border-2  hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3  rounded-md mx-3'>Add Experience</button>
-
-  {/* Education Section */}
-  
-  {formData.educationList.map((education, index) => (
-    <div key={index} className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
-        <label>Education:</label>
-      <input type="text" value={education} onChange={(e) => handleEducationChange(e, index)} />
-      <button onClick={() => removeEducation(index)}><MdDelete /></button>
-    </div>
-  ))}
-  <button onClick={addEducation} className='border-solid border-2  hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3  rounded-md mx-3'>Add Education</button>
-
-  <hr className=' mt-6'/>
-
+        <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
+          <label>Name:</label>
+          <input type="text" name="name" placeholder='Your Name' value={formData.name} onChange={handleInputChange} />
         </div>
+
+        <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
+          <label>Profession:</label>
+          <input type="text" name="profession" value={formData.profession} onChange={handleInputChange} />
+        </div>
+
+        {/* Personal info here */}
+        <div className='border-solid border-2 w-72 flex justify-center m-3 p-1 rounded-md'>
+          <label>Father&apos;s Name:</label>
+          <input type="text" name="fatherName" value={formData.fatherName} onChange={handleInputChange} />
+        </div>
+
+        <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
+          <label>Age:</label>
+          <input type="number" name="age" value={formData.age} onChange={handleInputChange} />
+        </div>
+
+        <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
+          <label>Religion:</label>
+          <input type="text" name="religion" value={formData.religion} onChange={handleInputChange} />
+        </div>
+
+        <div className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
+          <label>Marital Status:</label>
+          <input type="text" name="maritalStatus" value={formData.maritalStatus} onChange={handleInputChange} />
+        </div>
+
+        {/* Skills Section */}
+        {formData.skills.map((skill, index) => (
+          <div key={index} className='border-solid border-2 w-72 flex justify-center m-3 rounded-md'>
+            <label>Skills:</label>
+            <input type="text" value={skill} onChange={(e) => handleSkillsChange(e, index)} />
+            <button onClick={() => removeSkill(index)} className='text-black'><MdDelete /></button>
+          </div>
+        ))}
+        <button onClick={addSkill} className='border-solid border-2 hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3 mx-3 rounded-md'>Add Skill</button>
+
+        {/* Experience Section */}
+        {formData.experiences.map((experience, index) => (
+          <div key={index} className='border-solid border-2 rounded-md p-1 m-3'>
+            <label>Experience:</label>
+            <input
+              type="text"
+              name="years"
+              value={experience.years}
+              placeholder="Years"
+              onChange={(e) => handleExperienceChange(e, index, 'years')}
+            />
+            <input
+              type="text"
+              name="role"
+              value={experience.role}
+              placeholder="Role"
+              onChange={(e) => handleExperienceChange(e, index, 'role')}
+            />
+            <input
+              type="text"
+              name="company"
+              value={experience.company}
+              placeholder="Company"
+              onChange={(e) => handleExperienceChange(e, index, 'company')}
+            />
+            <button onClick={() => removeExperience(index)}><MdDelete /></button>
+          </div>
+        ))}
+        <button onClick={addExperience} className='border-solid border-2 hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3 rounded-md mx-3'>Add Experience</button>
+
+        {/* Education Section */}
+        {formData.educationList.map((education, index) => (
+          <div key={index} className='border-solid border-2 w-72 flex justify-center m-3 rounded-md p-1'>
+            <label>Education:</label>
+            <input type="text" value={education} onChange={(e) => handleEducationChange(e, index)} />
+            <button onClick={() => removeEducation(index)}><MdDelete /></button>
+          </div>
+        ))}
+        <button onClick={addEducation} className='border-solid border-2 hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-3 rounded-md mx-3'>Add Education</button>
+
+        <hr className='mt-6' />
 
         {/* Render Resume Section */}
         <div className="resume-render border-solid border-8 divide-y-0 mt-14 sm:mx-32 md:mx-48 my-4 rounded-md">
           <UserProfile name={formData.name} profession={formData.profession} />
-       <div><hr /></div>
+          <hr />
           <Objective objective="Seeking to build a career with a progressive company where I can learn, grow, and contribute to productivity, while leveraging my skills for future career advancement." />
-          <div><hr /></div>
-
+          <hr />
           <PersonalInfo
             fatherName={formData.fatherName}
             age={formData.age}
             religion={formData.religion}
             maritalStatus={formData.maritalStatus}
           />
-              <div><hr /></div>
-
+          <hr />
           <Education educationList={formData.educationList} />
-          <div><hr /></div>
-
+          <hr />
           <Skills skills={formData.skills} />
-          <div><hr /></div>
-
+          <hr />
           <Experience experiences={formData.experiences} />
-          <div><hr /></div>
-
+          <hr />
           <Reference referenceText="Will be furnished upon request." />
         </div>
 
         {/* Download PDF Button */}
-       <div className='flex justify-center m-3'>
-       <button onClick={downloadPDF} className="border-solid border-2  hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-4 mx-3 rounded-md">
-          Download PDF
-        </button>
-       </div>
+        <div className='flex justify-center m-3'>
+          <button onClick={downloadPDF} className="border-solid border-2 hover:bg-black hover:text-white hover:font-semibold border-black text-sm p-1.5 px-4 mx-3 rounded-md">
+            Download PDF
+          </button>
+        </div>
 
         <Footer />
       </div>
